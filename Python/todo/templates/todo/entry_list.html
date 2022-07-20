@@ -1,0 +1,229 @@
+
+<html lang="en">
+  <head>
+    <style type="text/css">
+        body{
+            padding: 0 2%;
+            color: #2e3e50;
+            background: #d8dddd;
+            }
+            .X{
+            margin: auto;
+            padding: 1% 2%;
+            max-width: 1440px;
+            border-radius: 5px;
+            background: #ecf0f1;
+            box-shadow: 0 2px 6px 0 rgba(0,0,0, .3);
+            }
+            h1,h2,h3{
+            text-align: center;
+            font-family: 'Baloo Tamma', cursive;
+            }
+            li{
+            color: #2c3e50;
+            font-size: 18px;
+            line-height: 30px;
+            text-align: justify;
+            letter-spacing: 1px;
+            font-family: 'Raleway', serif;
+            }
+            /*SG = style grid*/
+            .SG{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            }
+            .SG .sgLi{
+            min-width: 24%;
+            margin: 2% .35%;
+            display: inline-flex;
+            box-shadow: 0 2px 4px rgba(0,0,0, .2);
+            }
+            .SG .sgLi:hover{
+            box-shadow:0 5px 10px rgba(0,0,0,.15);}
+            .SG .box{
+            width: 100%;
+            height: 100vh;
+            padding: 1% 2%;
+            background: #fff;
+            min-height: 200px;
+            max-height: 220px;
+            box-sizing: border-box;
+            }
+            /*Styles */
+            .df{list-style-type: disc;}
+            .s1{list-style-type: square;}
+            .s2{list-style-type: circle;}
+            .s3{list-style-type: decimal;}
+            .s4{list-style-type: decimal-leading-zero;}
+            .s5{list-style-type: lower-alpha;}
+            .s6{list-style-type: upper-alpha;}
+            .s7{list-style-type: lower-roman;}
+            .s8{list-style-type: upper-roman;}
+            .s9{list-style-type: lower-greek;}
+            .s10{list-style-type: georgian;}
+            .s11{list-style-type: hebrew;}
+            .s12{list-style-type: hiragana;}
+            .s13{list-style-type: hiragana-iroha;}
+            .s14{list-style-type: katakana;}
+            .s15{list-style-type: katakana-iroha;}
+            .s16{list-style-type: cjk-ideographic;}
+            .s17{list-style-image: url(//goo.gl/L3tqpe);}
+            .s18{list-style: none;}
+            .s18 li:before{
+            content: '';
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            display: inline-block;
+            background: url(//goo.gl/lcPSVD);
+            background-position: 50%;
+            }
+            .s19{list-style: none;}
+            .s19 li:before{
+            content: '\f0a9';
+            margin-right: 15px;
+            font-family: FontAwesome;
+            }
+
+            /* responsive grid*/
+            @media (max-width: 970px){
+            .SG .sgLi{width: 180px;}}
+            @media (max-width: 425px){
+            .SG .sgLi{width: 100%;}
+            }
+            #outer
+            {
+                width:100%;
+                text-align: center;
+            }
+            .inner
+            {
+                display: inline-block;
+            }
+
+            .wrapper {
+                text-align: center;
+
+            }
+
+            #buttonAdd {
+                position: relative;
+                border-radius: 4px;
+                font-size: 24px;
+            }
+
+            #todoTitle{
+                color: brown;
+                font-family: 'Times New Roman', Times, serif;
+            }
+
+            #todoText{
+                font-size: x-large;
+            }
+
+            #todoStatus{
+                font-size: large;
+            }
+
+            .box{
+                border-radius: 25px;
+                border: 2px solid #000000;
+                padding: 20px;
+                width: 200px;
+                height: 150px;
+                -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+                box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+            }
+
+            #posted_on_html{
+              font-size: small;
+              
+            }
+
+            .wrap {
+              margin: 20px;
+              display: flex;
+            }
+
+            .wrap h6 {
+              align-self: flex-end;
+            }
+
+        </style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  </head>
+  
+
+  <body style="background-color: #414649;">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">ToDo List</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/todoList">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/">Add Entry</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Sort By
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'filtered_list' id='Important' %}">Important</a></li>
+                <li><a class="dropdown-item" href="{% url 'filtered_list' id='Basic' %}">Basic</a></li>
+                <li><a class="dropdown-item" href="{% url 'filtered_list' id='Urgent' %}">Urgent</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search" action="/todoList" method="POST">
+            {% csrf_token %}
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searchTitle">
+            <button class="btn btn-outline-success" type="submit" >Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <ul class="SG">
+
+        {% for entry in entrys %}
+            <li class="sgLi">
+                <div class="box">
+                    <h1 id="todoTitle"><a>{{ entry.title }}</a></h1>
+                    <h2 id="todoText">{{ entry.text|linebreaksbr }}</h2>
+                    <h3 id="todoStatus">Status: {{entry.status}}</h3>
+                    <div id="outer">
+
+                        <a href="{% url 'update_entry' id=entry.id %}">
+                            <div class="inner"><button type="submit" class="btn btn-primary">Update</button></div>
+                        </a>
+    
+                        <a href="{% url 'delete_entry' id=entry.id %}">
+                            <div class="inner"><button type="submit" class="btn btn-danger">Delete</button></div>
+                        </a>
+                    </div>
+                    <div class="wrap">
+                      <h6 id="posted_on_html">Posted on: {{entry.posted_on}}</h6>
+                    </div>
+                    
+                </div>
+
+            </li> 
+        {% endfor %}
+
+    </ul>
+    <!-- <div class="wrapper">
+        <a href="\">
+            <button id="buttonAdd" type="submit" id="addEntryButton ">Add Entry</button>
+        </a>
+    </div> -->
+    
+  </body>
+</html>
