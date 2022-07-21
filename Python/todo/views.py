@@ -31,6 +31,7 @@ def add_entry(request):
         entry.posted_on = timezone.now()
         entry.save()
         entrys = Entry.objects.filter(author=user)
+        entrys = Entry.objects.order_by('-posted_on')   
         return render(request,'todo/entry_list.html',{'entrys':entrys})
     return render(request,'todo/add_entry.html',{})
 
