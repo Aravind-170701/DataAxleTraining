@@ -17,6 +17,7 @@ const Forms = () => {
     const[currentFormData, setFormData] = useState(formData)
 
     function handleSubmit(event) {
+        event.preventDefault();
 
         formData["title"] = event.target[0].value
         formData["description"] = event.target[1].value
@@ -102,7 +103,7 @@ const Forms = () => {
 
                                     <div className="form-group row">
                                         <div className="col-sm-10">
-                                        <button type="submit" class="btn btn-primary">Add Blog</button>
+                                        <button id="submit_button" type="submit" className="btn btn-primary">Add Blog</button>
                                         </div>
                                     </div>
 
