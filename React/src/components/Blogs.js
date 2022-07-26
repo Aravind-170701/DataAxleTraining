@@ -33,7 +33,7 @@ const Blogs = () => {
                                         <div className="content">
                                             <h2>{index + 1}</h2>
                                             <h3>{blog.title}</h3>
-                                            <p>{blog.description}</p>
+                                            <p id="paragraph_id">{blog.description}</p>
                                             <a href="#">Read More</a>
                                         </div>
                                     </div>
