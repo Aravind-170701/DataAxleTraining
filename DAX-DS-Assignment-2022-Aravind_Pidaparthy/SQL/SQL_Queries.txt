@@ -1,0 +1,44 @@
+/*Topic - Condition + String matching + logical operator*/
+
+/*Question 1*/
+select CustomerID, FirstName, LastName, City  from customers where FirstName like "N%" OR City = "Berlin";
+
+/*Question 2*/
+select TrackId, Name, Composer, UnitPrice from tracks where UnitPrice between 0.90 and 1.00 and Composer not like "%T%";
+
+
+/*Topic - Group By, Order By */
+
+/*Question 1*/
+/*There is no record for year 2020 so instead calculating for year 2012 June */
+select InvoiceDate,sum(Total) as "Amount_Sum_of_Invoices",avg(Total) as "Amount_Average_of_Invoices" from invoices where InvoiceDate like "2012-06-%" group by InvoiceDate;
+
+/*Question 2*/
+select TrackId, count(Quantity) as "Total_Quantity" from invoice_items group by TrackId order by Total_Quantity desc;
+
+
+/*Topic - Group By, Order By */
+
+/*Question 1*/
+select * from artists;
+select * from playlists;
+select * from playlist_track;
+
+select a.ArtistId , a.Name from artists a where ArtistId not in 
+   (select al.ArtistId from albums al inner join tracks t on al.AlbumId = t.AlbumId
+       inner join playlist_track pl on t.TrackId = pl.TrackId
+       	    inner join playlists p on pl.PlaylistId = p.PlaylistId);
+
+
+select a.ArtistId , a.Name from artists a where a.ArtistId not in 
+    (select al.ArtistId from albums al where al.AlbumId = 
+        (select t.AlbumId from tracks t where t.TrackId = 
+            (select pl.TrackId from playlist_track pl where pl.PlaylistId = 
+                (select p.PlaylistId from playlists p))));
+
+/*Question 2*/
+/*select al.AlbumId, al.Title, count(pl.PlaylistId) from albums al
+inner join tracks t on al.AlbumId = t.AlbumId
+inner join playlist_track pl on t.TrackId = pl.TrackId
+inner join playlists p on pl.PlaylistId = p.PlaylistId group by pl.TrackId having count(pl.PlaylistId) > 2;*/
+
