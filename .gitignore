@@ -3,6 +3,7 @@
 # dependencies
 /React/node_modules
 /Python/env
+/DAX-DS-Assignment-2022-Aravind_Pidaparthy/myenv
 /.pnp
 .pnp.js
 
