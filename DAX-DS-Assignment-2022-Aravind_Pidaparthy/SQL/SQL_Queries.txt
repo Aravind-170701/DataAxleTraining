@@ -37,8 +37,11 @@ select a.ArtistId , a.Name from artists a where a.ArtistId not in
                 (select p.PlaylistId from playlists p))));
 
 /*Question 2*/
-/*select al.AlbumId, al.Title, count(pl.PlaylistId) from albums al
-inner join tracks t on al.AlbumId = t.AlbumId
-inner join playlist_track pl on t.TrackId = pl.TrackId
-inner join playlists p on pl.PlaylistId = p.PlaylistId group by pl.TrackId having count(pl.PlaylistId) > 2;*/
+select al.AlbumId, al.Title, count(pl.PlaylistId) AS playListCount from tracks t
+       inner join playlist_track pl on t.TrackId = pl.TrackId
+       inner join albums al on al.AlbumId = t.AlbumId
+       group by t.AlbumId
+       having playListCount > 2;
+ 
+
 
